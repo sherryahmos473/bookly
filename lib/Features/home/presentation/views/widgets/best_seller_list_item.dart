@@ -1,18 +1,22 @@
 import 'package:bookly/Features/home/presentation/views/widgets/book_rating.dart';
 import 'package:bookly/constants.dart';
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class BestSellerListItem extends StatelessWidget {
   const BestSellerListItem({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 109,
-      child: Padding(
-        padding: const EdgeInsets.only(right: 30),
+    return GestureDetector(
+      onTap: (){
+        GoRouter.of(context).go(AppRouter.kBookDetailsView);
+      },
+      child: SizedBox(
+        height: 125,
         child: Row(
           children: [
             AspectRatio(
@@ -38,8 +42,8 @@ class BestSellerListItem extends StatelessWidget {
                       'Harry Potter and the Goblet of FireHarry Potter and the Goblet of Fire',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: Styles.textStyle20
-                          .copyWith(fontFamily: kGtSectraFine),
+                      style:
+                          Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
                     ),
                   ),
                   const SizedBox(height: 2),
@@ -54,8 +58,8 @@ class BestSellerListItem extends StatelessWidget {
                         style: Styles.textStyle20
                             .copyWith(fontWeight: FontWeight.bold),
                       ),
-                      Spacer(),
-                      BookRating(),
+                      const Spacer(),
+                      const BookRating(),
                     ],
                   )
                 ],
