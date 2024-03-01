@@ -1,22 +1,22 @@
 import 'package:bookly/Features/home/presentation/views/widgets/book_listview_item.dart';
 import 'package:flutter/material.dart';
 
-class BookListview extends StatelessWidget {
-  const BookListview({super.key});
+class SearchResultListview extends StatelessWidget {
+  const SearchResultListview({super.key});
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      //shrinkWrap: true,
+      physics: NeverScrollableScrollPhysics(),
+      shrinkWrap: true,
       padding: EdgeInsets.zero,
-      physics: const NeverScrollableScrollPhysics(),
       itemBuilder: (BuildContext context, int index) {
         return const Padding(
           padding: EdgeInsets.symmetric(vertical: 10),
           child: BookListviewItem(),
         );
       },
-      itemCount: 5,
+      itemCount: 10,
       //scrollDirection: Axis.horizontal,
     );
   }

@@ -6,8 +6,8 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BestSellerListItem extends StatelessWidget {
-  const BestSellerListItem({super.key});
+class BookListviewItem extends StatelessWidget {
+  const BookListviewItem({super.key});
 
   @override
   Widget build(BuildContext context) {
