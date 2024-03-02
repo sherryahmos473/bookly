@@ -12,7 +12,7 @@ class BookListviewItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){
+      onTap: () {
         GoRouter.of(context).go(AppRouter.kBookDetailsView);
       },
       child: SizedBox(
@@ -42,8 +42,8 @@ class BookListviewItem extends StatelessWidget {
                       'Harry Potter and the Goblet of FireHarry Potter and the Goblet of Fire',
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style:
-                          Styles.textStyle20.copyWith(fontFamily: kGtSectraFine),
+                      style: Styles.textStyle20
+                          .copyWith(fontFamily: kGtSectraFine),
                     ),
                   ),
                   const SizedBox(height: 2),
