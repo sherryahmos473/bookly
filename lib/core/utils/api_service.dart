@@ -9,8 +9,8 @@ class ApiService {
     try {
       final response = await dio.get(_baseUrl + endPoint);
       return response.data;
-    } on DioError catch (e) {
-      throw e;
+    } on DioException catch (e) {
+      return e.response!.data;
     }
   }
 }
