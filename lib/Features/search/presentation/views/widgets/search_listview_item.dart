@@ -7,9 +7,8 @@ import 'package:bookly/core/utils/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
-class BookListviewItem extends StatelessWidget {
-  const BookListviewItem({super.key, required this.bookModel});
-
+class SearchListViewItem extends StatelessWidget {
+  const SearchListViewItem({super.key, required this.bookModel});
   final BookModel bookModel;
 
   @override
@@ -41,7 +40,9 @@ class BookListviewItem extends StatelessWidget {
                   ),
                   const SizedBox(height: 2),
                   Text(
-                    bookModel.volumeInfo.authors![0],
+                    bookModel.volumeInfo.authors == null
+                        ? 'Unknown'
+                        : bookModel.volumeInfo.authors![0],
                     style: Styles.textStyle14,
                   ),
                   Row(
